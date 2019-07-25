@@ -19,235 +19,269 @@
       <div>
         <p>MO</p>
         <span class="firstSpan"><input type="checkbox" id="cb1"> <label for="cb1"></label></span>
-        <table>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
+        <Tr 
+          v-bind:tdMassive="tdMassive"
+        />
+        <div class="borderRight"></div>
       </div>
       <div>
         <p>TU</p>
         <span><input type="checkbox" id="cb2"> <label for="cb2"></label></span>
-        <table>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
+          <Tr2
+            v-bind:tdMassive2="tdMassive2"
+          />
+        <div class="borderRight"></div>
       </div>
       <div>
         <p>WE</p>
         <span><input type="checkbox" id="cb3"> <label for="cb3"></label></span>
-        <table>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
+          <Tr3 
+            v-bind:tdMassive3="tdMassive3"
+          />
+        <div class="borderRight"></div>
       </div>
       <div>
         <p>TH</p>
         <span><input type="checkbox" id="cb4"> <label for="cb4"></label></span>
-        <table>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
+          <Tr4 
+            v-bind:tdMassive4="tdMassive4"
+          />
+        <div class="borderRight"></div>
       </div>
       <div>
         <p>FR</p>
         <span><input type="checkbox" id="cb5"> <label for="cb5"></label></span>
-        <table>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
+          <Tr5 
+            v-bind:tdMassive5="tdMassive5"
+          />
+        <div class="borderRight"></div>
       </div>
       <div>
         <p>SA</p>
         <span><input type="checkbox" id="cb6"> <label for="cb6"></label></span>
-        <table>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
+          <Tr6 
+            v-bind:tdMassive6="tdMassive6"
+          />
+        <div class="borderRight"></div>
       </div>
       <div>
         <p class="lastP">SU</p>
         <span class="lastSpan"><input type="checkbox" id="cb7"> <label for="cb7"></label></span>
-        <table class="lastTable">
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
+          <Tr7 
+            v-bind:tdMassive7="tdMassive7"
+          />
+        <div class="borderRight"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Tr from '@/components/TrMonday'
+import Tr2 from '@/components/TrTuesday'
+import Tr3 from '@/components/TrWednesday'
+import Tr4 from '@/components/TrThursday'
+import Tr5 from '@/components/TrFriday'
+import Tr6 from '@/components/TrSaturday'
+import Tr7 from '@/components/TrSunday'
 
 export default {
-  name: 'app'
+  name: 'app',
+  data() {
+    return {
+      tdMassive: [
+        {id: 1, completed: false},
+        {id: 2, completed: false},
+        {id: 3, completed: false},
+        {id: 4, completed: false},
+        {id: 5, completed: false},
+        {id: 6, completed: false},
+        {id: 7, completed: false},
+        {id: 8, completed: false},
+        {id: 9, completed: false},
+        {id: 10, completed: false},
+        {id: 11, completed: false},
+        {id: 12, completed: false},
+        {id: 13, completed: false},
+        {id: 14, completed: false},
+        {id: 15, completed: false},
+        {id: 16, completed: false},
+        {id: 17, completed: false},
+        {id: 18, completed: false},
+        {id: 19, completed: false},
+        {id: 20, completed: false},
+        {id: 21, completed: false},
+        {id: 22, completed: false},
+        {id: 23, completed: false},
+        {id: 24, completed: false}
+      ],
+      tdMassive2: [
+        {id: 1, completed1: false},
+        {id: 2, completed1: false},
+        {id: 3, completed1: false},
+        {id: 4, completed1: false},
+        {id: 5, completed1: false},
+        {id: 6, completed1: false},
+        {id: 7, completed1: false},
+        {id: 8, completed1: false},
+        {id: 9, completed1: false},
+        {id: 10, completed1: false},
+        {id: 11, completed1: false},
+        {id: 12, completed1: false},
+        {id: 13, completed1: false},
+        {id: 14, completed1: false},
+        {id: 15, completed1: false},
+        {id: 16, completed1: false},
+        {id: 17, completed1: false},
+        {id: 18, completed1: false},
+        {id: 19, completed1: false},
+        {id: 20, completed1: false},
+        {id: 21, completed1: false},
+        {id: 22, completed1: false},
+        {id: 23, completed1: false},
+        {id: 24, completed1: false}
+      ],
+      tdMassive3: [
+        {id: 1, completed2: false},
+        {id: 2, completed2: false},
+        {id: 3, completed2: false},
+        {id: 4, completed2: false},
+        {id: 5, completed2: false},
+        {id: 6, completed2: false},
+        {id: 7, completed2: false},
+        {id: 8, completed2: false},
+        {id: 9, completed2: false},
+        {id: 10, completed2: false},
+        {id: 11, completed2: false},
+        {id: 12, completed2: false},
+        {id: 13, completed2: false},
+        {id: 14, completed2: false},
+        {id: 15, completed2: false},
+        {id: 16, completed2: false},
+        {id: 17, completed2: false},
+        {id: 18, completed2: false},
+        {id: 19, completed2: false},
+        {id: 20, completed2: false},
+        {id: 21, completed2: false},
+        {id: 22, completed2: false},
+        {id: 23, completed2: false},
+        {id: 24, completed2: false}
+      ],
+      tdMassive4: [
+        {id: 1, completed3: false},
+        {id: 2, completed3: false},
+        {id: 3, completed3: false},
+        {id: 4, completed3: false},
+        {id: 5, completed3: false},
+        {id: 6, completed3: false},
+        {id: 7, completed3: false},
+        {id: 8, completed3: false},
+        {id: 9, completed3: false},
+        {id: 10, completed3: false},
+        {id: 11, completed3: false},
+        {id: 12, completed3: false},
+        {id: 13, completed3: false},
+        {id: 14, completed3: false},
+        {id: 15, completed3: false},
+        {id: 16, completed3: false},
+        {id: 17, completed3: false},
+        {id: 18, completed3: false},
+        {id: 19, completed3: false},
+        {id: 20, completed3: false},
+        {id: 21, completed3: false},
+        {id: 22, completed3: false},
+        {id: 23, completed3: false},
+        {id: 24, completed3: false}
+      ],
+      tdMassive5: [
+        {id: 1, completed4: false},
+        {id: 2, completed4: false},
+        {id: 3, completed4: false},
+        {id: 4, completed4: false},
+        {id: 5, completed4: false},
+        {id: 6, completed4: false},
+        {id: 7, completed4: false},
+        {id: 8, completed4: false},
+        {id: 9, completed4: false},
+        {id: 10, completed4: false},
+        {id: 11, completed4: false},
+        {id: 12, completed4: false},
+        {id: 13, completed4: false},
+        {id: 14, completed4: false},
+        {id: 15, completed4: false},
+        {id: 16, completed4: false},
+        {id: 17, completed4: false},
+        {id: 18, completed4: false},
+        {id: 19, completed4: false},
+        {id: 20, completed4: false},
+        {id: 21, completed4: false},
+        {id: 22, completed4: false},
+        {id: 23, completed4: false},
+        {id: 24, completed4: false}
+      ],
+      tdMassive6: [
+        {id: 1, completed5: false},
+        {id: 2, completed5: false},
+        {id: 3, completed5: false},
+        {id: 4, completed5: false},
+        {id: 5, completed5: false},
+        {id: 6, completed5: false},
+        {id: 7, completed5: false},
+        {id: 8, completed5: false},
+        {id: 9, completed5: false},
+        {id: 10, completed5: false},
+        {id: 11, completed5: false},
+        {id: 12, completed5: false},
+        {id: 13, completed5: false},
+        {id: 14, completed5: false},
+        {id: 15, completed5: false},
+        {id: 16, completed5: false},
+        {id: 17, completed5: false},
+        {id: 18, completed5: false},
+        {id: 19, completed5: false},
+        {id: 20, completed5: false},
+        {id: 21, completed5: false},
+        {id: 22, completed5: false},
+        {id: 23, completed5: false},
+        {id: 24, completed5: false}
+      ],
+      tdMassive7: [
+        {id: 1, completed6: false},
+        {id: 2, completed6: false},
+        {id: 3, completed6: false},
+        {id: 4, completed6: false},
+        {id: 5, completed6: false},
+        {id: 6, completed6: false},
+        {id: 7, completed6: false},
+        {id: 8, completed6: false},
+        {id: 9, completed6: false},
+        {id: 10, completed6: false},
+        {id: 11, completed6: false},
+        {id: 12, completed6: false},
+        {id: 13, completed6: false},
+        {id: 14, completed6: false},
+        {id: 15, completed6: false},
+        {id: 16, completed6: false},
+        {id: 17, completed6: false},
+        {id: 18, completed6: false},
+        {id: 19, completed6: false},
+        {id: 20, completed6: false},
+        {id: 21, completed6: false},
+        {id: 22, completed6: false},
+        {id: 23, completed6: false},
+        {id: 24, completed6: false}
+      ]
+    }
+  },
+  components: {
+    Tr,
+    Tr2,
+    Tr3,
+    Tr4,
+    Tr5,
+    Tr6,
+    Tr7
+  }
 }
 </script>
 
@@ -292,7 +326,7 @@ li{
   text-align: left;
 }
 li:last-child{
-  width: 80px;
+  width: 78px;
 }
 .main div{
   display: flex;
@@ -304,33 +338,25 @@ p{
   width: 54px;
   height: 52px;
   line-height: 55px;
-  color: #cccccc;
+  color: #bbbbbb;
   font-weight: 500;
-  border-top: 3px solid #cccccc;
-  border-left: 3px solid #cccccc;
-  border-right: 3px solid #cccccc;
+  border-top: 3px solid #bbbbbb;
+  border-left: 3px solid #bbbbbb;
+  border-right: 3px solid #bbbbbb;
 }
 .lastP{
-  border-bottom: 3px solid #cccccc;
+  border-bottom: 3px solid #bbbbbb;
 }
-
-
-
-
 
 span{
   width: 60px;
   height: 52px;
   line-height: 55px;
   background: #2c3e50;
-  border-top: 3px solid #cccccc;
-}
-.firstSpan{
-  border-top: 0px solid #cccccc;
-  height: 55px;
+  border-top: 3px solid #bbbbbb;
 }
 .lastSpan{
-  border-bottom: 3px solid #cccccc;
+  border-bottom: 3px solid #bbbbbb;
   height: 52px;
 }
 input{
@@ -395,30 +421,32 @@ input[type="checkbox"]:checked + label:after {
     opacity: 1;
 }
 
-
-
-
-
-
-
 table{
   padding: 0;
   margin: 0;
   border-spacing: 0;
 }
-td{
-  border-left: 3px solid #cccccc;
-  border-top: 3px solid #cccccc;
-  width: 21px;
-  height: 50px;
+.borderRight{
+  border-right: 3px solid #bbbbbb;
 }
-td:last-child{
-  border-left: 3px solid #cccccc;
-  border-top: 3px solid #cccccc;
-  border-right: 3px solid #cccccc;
-  width: 23px; 
+tr{
+  width: 26px;
+}
+td{
+  border-left: 3px solid #bbbbbb;
+  border-top: 3px solid #bbbbbb;
+  width: 23px;
+  height: 50px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .lastTable td{
-  border-bottom: 3px solid #cccccc;
+  border-bottom: 3px solid #bbbbbb;
+}
+.selected{
+  background: #cccccc;
 }
 </style>
