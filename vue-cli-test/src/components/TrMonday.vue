@@ -4,7 +4,7 @@
         v-for="massive of tdMassive"
         v-bind:massive="massive"
     />
-    </table>
+  </table>
 </template>
 
 <script>

@@ -18,57 +18,64 @@
     <div class="main">
       <div>
         <p>MO</p>
-        <span class="firstSpan"><input type="checkbox" id="cb1"> <label for="cb1"></label></span>
-        <Tr 
+        <span class="firstSpan"><input type="checkbox" id="cb1" @change="changeComplete()"><label for="cb1"></label></span>
+        <Tr
           v-bind:tdMassive="tdMassive"
+          v-bind:class="{selected: completeMonday}"
         />
         <div class="borderRight"></div>
       </div>
       <div>
         <p>TU</p>
-        <span><input type="checkbox" id="cb2"> <label for="cb2"></label></span>
+        <span><input type="checkbox" id="cb2" @change="changeComplete2()"> <label for="cb2"></label></span>
           <Tr2
             v-bind:tdMassive2="tdMassive2"
+            v-bind:class="{selected: completeTuesday}"
           />
         <div class="borderRight"></div>
       </div>
       <div>
         <p>WE</p>
-        <span><input type="checkbox" id="cb3"> <label for="cb3"></label></span>
+        <span><input type="checkbox" id="cb3" @change="changeComplete3()"> <label for="cb3"></label></span>
           <Tr3 
             v-bind:tdMassive3="tdMassive3"
+            v-bind:class="{selected: completeWednesday}"
           />
         <div class="borderRight"></div>
       </div>
       <div>
         <p>TH</p>
-        <span><input type="checkbox" id="cb4"> <label for="cb4"></label></span>
+        <span><input type="checkbox" id="cb4" @change="changeComplete4()"> <label for="cb4"></label></span>
           <Tr4 
             v-bind:tdMassive4="tdMassive4"
+            v-bind:class="{selected: completeThursday}"
           />
         <div class="borderRight"></div>
       </div>
       <div>
         <p>FR</p>
-        <span><input type="checkbox" id="cb5"> <label for="cb5"></label></span>
+        <span><input type="checkbox" id="cb5" @change="changeComplete5()"> <label for="cb5"></label></span>
           <Tr5 
             v-bind:tdMassive5="tdMassive5"
+            v-bind:class="{selected: completeFriday}"
           />
         <div class="borderRight"></div>
       </div>
       <div>
         <p>SA</p>
-        <span><input type="checkbox" id="cb6"> <label for="cb6"></label></span>
+        <span><input type="checkbox" id="cb6" @change="changeComplete6()"> <label for="cb6"></label></span>
           <Tr6 
             v-bind:tdMassive6="tdMassive6"
+            v-bind:class="{selected: completeSaturday}"
           />
         <div class="borderRight"></div>
       </div>
       <div>
         <p class="lastP">SU</p>
-        <span class="lastSpan"><input type="checkbox" id="cb7"> <label for="cb7"></label></span>
+        <span class="lastSpan"><input type="checkbox" id="cb7" @change="changeComplete7()"> <label for="cb7"></label></span>
           <Tr7 
             v-bind:tdMassive7="tdMassive7"
+            v-bind:class="{selected: completeSunday}"
           />
         <div class="borderRight"></div>
       </div>
@@ -87,8 +94,15 @@ import Tr7 from '@/components/TrSunday'
 
 export default {
   name: 'app',
-  data() {
+  data() { 
     return {
+      completeMonday: false,
+      completeTuesday: false,
+      completeWednesday: false,
+      completeThursday: false,
+      completeFriday: false,
+      completeSaturday: false,
+      completeSunday: false,
       tdMassive: [
         {id: 1, completed: false},
         {id: 2, completed: false},
@@ -273,6 +287,50 @@ export default {
       ]
     }
   },
+  methods: {
+    changeComplete() {
+      this.tdMassive.forEach(function(completed){
+        completed.completed = false;
+      });
+      this.completeMonday = !this.completeMonday;
+    },
+    changeComplete2() {
+      this.tdMassive2.forEach(function(completed1){
+        completed1.completed1 = false;
+      });
+      this.completeTuesday = !this.completeTuesday;
+    },
+    changeComplete3() {
+      this.tdMassive3.forEach(function(completed2){
+        completed2.completed2 = false;
+      });
+      this.completeWednesday = !this.completeWednesday;
+    },
+    changeComplete4() {
+      this.tdMassive4.forEach(function(completed3){
+        completed3.completed3 = false;
+      });
+      this.completeThursday = !this.completeThursday;
+    },
+    changeComplete5() {
+      this.tdMassive5.forEach(function(completed4){
+        completed4.completed4 = false;
+      });
+      this.completeFriday = !this.completeFriday;
+    },
+    changeComplete6() {
+      this.tdMassive6.forEach(function(completed5){
+        completed5.completed5 = false;
+      });
+      this.completeSaturday = !this.completeSaturday;
+    },
+    changeComplete7() {
+      this.tdMassive7.forEach(function(completed6){
+        completed6.completed6 = false;
+      });
+      this.completeSunday = !this.completeSunday;
+    }
+  },
   components: {
     Tr,
     Tr2,
@@ -294,6 +352,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   height: 100%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .header{
   display: flex;
