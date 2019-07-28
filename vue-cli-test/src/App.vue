@@ -16,17 +16,18 @@
       </ul>
     </div>
     <div class="main">
-      <div>
-        <p>MO</p>
+      <div @click="selectMo()">
+        <p v-bind:class="{changeColor: selectMonday}">MO</p>
         <span class="firstSpan"><input type="checkbox" id="cb1" @change="changeComplete()"><label for="cb1"></label></span>
         <Tr
           v-bind:tdMassive="tdMassive"
           v-bind:class="{selected: completeMonday}"
+          
         />
         <div class="borderRight"></div>
       </div>
-      <div>
-        <p>TU</p>
+      <div @click="selectTu()">
+        <p v-bind:class="{changeColor: selectTuesday}">TU</p>
         <span><input type="checkbox" id="cb2" @change="changeComplete2()"> <label for="cb2"></label></span>
           <Tr2
             v-bind:tdMassive2="tdMassive2"
@@ -34,8 +35,8 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div>
-        <p>WE</p>
+      <div @click="selectWe()">
+        <p v-bind:class="{changeColor: selectWednesday}">WE</p>
         <span><input type="checkbox" id="cb3" @change="changeComplete3()"> <label for="cb3"></label></span>
           <Tr3 
             v-bind:tdMassive3="tdMassive3"
@@ -43,8 +44,8 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div>
-        <p>TH</p>
+      <div @click="selectTh()">
+        <p v-bind:class="{changeColor: selectThursday}">TH</p>
         <span><input type="checkbox" id="cb4" @change="changeComplete4()"> <label for="cb4"></label></span>
           <Tr4 
             v-bind:tdMassive4="tdMassive4"
@@ -52,8 +53,8 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div>
-        <p>FR</p>
+      <div @click="selectFr()">
+        <p v-bind:class="{changeColor: selectFriday}">FR</p>
         <span><input type="checkbox" id="cb5" @change="changeComplete5()"> <label for="cb5"></label></span>
           <Tr5 
             v-bind:tdMassive5="tdMassive5"
@@ -61,8 +62,8 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div>
-        <p>SA</p>
+      <div @click="selectSa()">
+        <p v-bind:class="{changeColor: selectSaturday}">SA</p>
         <span><input type="checkbox" id="cb6" @change="changeComplete6()"> <label for="cb6"></label></span>
           <Tr6 
             v-bind:tdMassive6="tdMassive6"
@@ -70,8 +71,8 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div>
-        <p class="lastP">SU</p>
+      <div @click="selectSu()">
+        <p class="lastP" v-bind:class="{changeColor: selectSunday}">SU</p>
         <span class="lastSpan"><input type="checkbox" id="cb7" @change="changeComplete7()"> <label for="cb7"></label></span>
           <Tr7 
             v-bind:tdMassive7="tdMassive7"
@@ -96,6 +97,14 @@ export default {
   name: 'app',
   data() { 
     return {
+      selectMonday: false,
+      selectTuesday: false,
+      selectWednesday: false,
+      selectThursday: false,
+      selectFriday: false,
+      selectSaturday: false,
+      selectSunday: false,
+
       completeMonday: false,
       completeTuesday: false,
       completeWednesday: false,
@@ -103,6 +112,7 @@ export default {
       completeFriday: false,
       completeSaturday: false,
       completeSunday: false,
+
       tdMassive: [
         {id: 1, completed: false},
         {id: 2, completed: false},
@@ -293,43 +303,120 @@ export default {
         completed.completed = false;
       });
       this.completeMonday = !this.completeMonday;
+      if (this.completeMonday){
+        this.selectMonday = true;
+      }
     },
     changeComplete2() {
       this.tdMassive2.forEach(function(completed1){
         completed1.completed1 = false;
       });
       this.completeTuesday = !this.completeTuesday;
+      if (this.completeTuesday){
+        this.selectTuesday = true;
+      }
     },
     changeComplete3() {
       this.tdMassive3.forEach(function(completed2){
         completed2.completed2 = false;
       });
       this.completeWednesday = !this.completeWednesday;
+      if (this.completeWednesday){
+        this.selectWednesday = true;
+      }
     },
     changeComplete4() {
       this.tdMassive4.forEach(function(completed3){
         completed3.completed3 = false;
       });
       this.completeThursday = !this.completeThursday;
+      if (this.completeThursday){
+        this.selectThursday = true;
+      }
     },
     changeComplete5() {
       this.tdMassive5.forEach(function(completed4){
         completed4.completed4 = false;
       });
       this.completeFriday = !this.completeFriday;
+      if (this.completeFriday){
+        this.selectFriday = true;
+      }
     },
     changeComplete6() {
       this.tdMassive6.forEach(function(completed5){
         completed5.completed5 = false;
       });
       this.completeSaturday = !this.completeSaturday;
+      if (this.completeSaturday){
+        this.selectSaturday = true;
+      }
     },
     changeComplete7() {
       this.tdMassive7.forEach(function(completed6){
         completed6.completed6 = false;
       });
       this.completeSunday = !this.completeSunday;
-    }
+      if (this.completeSunday){
+        this.selectSunday = true;
+      }
+    },
+    selectMo (selectMonday){
+      this.tdMassive.forEach(function(completed){
+        if (completed.completed) {
+          selectMonday = true;
+        }
+      });
+      this.selectMonday = selectMonday;
+    },
+    selectTu (selectTuesday){
+      this.tdMassive2.forEach(function(completed1){
+        if (completed1.completed1) {
+          selectTuesday = true;
+        }
+      });
+      this.selectTuesday = selectTuesday;
+    },
+    selectWe (selectWednesday){
+      this.tdMassive3.forEach(function(completed2){
+        if (completed2.completed2) {
+          selectWednesday = true;
+        }
+      });
+      this.selectWednesday = selectWednesday;
+    },
+    selectTh (selectThursday){
+      this.tdMassive4.forEach(function(completed3){
+        if (completed3.completed3) {
+          selectThursday = true;
+        }
+      });
+      this.selectThursday = selectThursday;
+    },
+    selectFr (selectFriday){
+      this.tdMassive5.forEach(function(completed4){
+        if (completed4.completed4) {
+          selectFriday = true;
+        }
+      });
+      this.selectFriday = selectFriday;
+    },
+    selectSa (selectSaturday){
+      this.tdMassive6.forEach(function(completed5){
+        if (completed5.completed5) {
+          selectSaturday = true;
+        }
+      });
+      this.selectSaturday = selectSaturday;
+    },
+    selectSu (selectSunday){
+      this.tdMassive7.forEach(function(completed6){
+        if (completed6.completed6) {
+          selectSunday = true;
+        }
+      });
+      this.selectSunday = selectSunday;
+    },
   },
   components: {
     Tr,
@@ -402,7 +489,7 @@ p{
   height: 52px;
   line-height: 55px;
   color: #bbbbbb;
-  font-weight: 500;
+  font-weight: 600;
   border-top: 3px solid #bbbbbb;
   border-left: 3px solid #bbbbbb;
   border-right: 3px solid #bbbbbb;
@@ -511,5 +598,9 @@ td{
 }
 .selected{
   background: #cccccc;
+}
+.changeColor{
+  background: #cccccc;
+  color: #2c3e50;
 }
 </style>
