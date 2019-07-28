@@ -16,7 +16,7 @@
       </ul>
     </div>
     <div class="main"> 
-      <div @click="changeChecked()" @mousedown="selectMo()" @mouseup="selectMo()" @mouseleave="selectMo()" @mouseenter="selectMo()">
+      <div @mousedown="changeChecked(), selectMo()" @mouseup="changeChecked(), selectMo()" @mouseleave="changeChecked(), selectMo()" @mouseenter="changeChecked(), selectMo()">
         <p v-bind:class="{changeColor: selectMonday}">MO</p>
         <span class="firstSpan"><input type="checkbox" id="cb1" v-model="change" @change="changeComplete()"><label for="cb1"></label></span>
         <Tr
@@ -25,7 +25,7 @@
         />
         <div class="borderRight"></div>
       </div>
-      <div @click="changeChecked2()" @mousedown="selectTu()" @mouseup="selectTu()" @mouseleave="selectTu()" @mouseenter="selectTu()">
+      <div @mousedown="changeChecked2(), selectTu()" @mouseup="changeChecked2(), selectTu()" @mouseleave="changeChecked2(), selectTu()" @mouseenter="changeChecked2(), selectTu()">
         <p v-bind:class="{changeColor: selectTuesday}">TU</p>
         <span><input type="checkbox" id="cb2" v-model="change2" @change="changeComplete2()"> <label for="cb2"></label></span>
           <Tr2
@@ -34,7 +34,7 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div @click="changeChecked3()" @mousedown="selectWe()" @mouseup="selectWe()" @mouseleave="selectWe()" @mouseenter="selectWe()">
+      <div @mousedown="changeChecked3(), selectWe()" @mouseup="changeChecked3(), selectWe()" @mouseleave="changeChecked3(), selectWe()" @mouseenter="changeChecked3(), selectWe()">
         <p v-bind:class="{changeColor: selectWednesday}">WE</p>
         <span><input type="checkbox" id="cb3" v-model="change3" @change="changeComplete3()"> <label for="cb3"></label></span>
           <Tr3 
@@ -43,7 +43,7 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div @click="changeChecked4()" @mousedown="selectTh()" @mouseup="selectTh()" @mouseleave="selectTh()" @mouseenter="selectTh()">
+      <div @mousedown="changeChecked4(), selectTh()" @mouseup="changeChecked4(), selectTh()" @mouseleave="changeChecked4(), selectTh()" @mouseenter="changeChecked4(), selectTh()">
         <p v-bind:class="{changeColor: selectThursday}">TH</p>
         <span><input type="checkbox" id="cb4" v-model="change4" @change="changeComplete4()"> <label for="cb4"></label></span>
           <Tr4 
@@ -52,7 +52,7 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div @click="changeChecked5()" @mousedown="selectFr()" @mouseup="selectFr()" @mouseleave="selectFr()" @mouseenter="selectFr()">
+      <div @mousedown="changeChecked5(), selectFr()" @mouseup="changeChecked5(), selectFr()" @mouseleave="changeChecked5(), selectFr()" @mouseenter="changeChecked5(), selectFr()">
         <p v-bind:class="{changeColor: selectFriday}">FR</p>
         <span><input type="checkbox" id="cb5" v-model="change5" @change="changeComplete5()"> <label for="cb5"></label></span>
           <Tr5 
@@ -61,7 +61,7 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div @click="changeChecked6()" @mousedown="selectSa()" @mouseup="selectSa()" @mouseleave="selectSa()" @mouseenter="selectSa()">
+      <div @mousedown="changeChecked6(), selectSa()" @mouseup="changeChecked6(), selectSa()" @mouseleave="changeChecked6(), selectSa()" @mouseenter="changeChecked6(), selectSa()">
         <p v-bind:class="{changeColor: selectSaturday}">SA</p>
         <span><input type="checkbox" id="cb6" v-model="change6" @change="changeComplete6()"> <label for="cb6"></label></span>
           <Tr6 
@@ -70,7 +70,7 @@
           />
         <div class="borderRight"></div>
       </div>
-      <div @click="changeChecked7()" @mousedown="selectSu()" @mouseup="selectSu()" @mouseleave="selectSu()" @mouseenter="selectSu()">
+      <div @mousedown="changeChecked7(), selectSu()" @mouseup="changeChecked7(), selectSu()" @mouseleave="changeChecked7(), selectSu()" @mouseenter="changeChecked7(), selectSu()">
         <p class="lastP" v-bind:class="{changeColor: selectSunday}">SU</p>
         <span class="lastSpan"><input type="checkbox" id="cb7" v-model="change7" @change="changeComplete7()"> <label for="cb7"></label></span>
           <Tr7 
@@ -307,7 +307,15 @@ export default {
     }
   },
   methods: {
-    changeComplete(change, it=0) {
+    changeComplete(change, it=0, complete=true) {
+    this.tdMassive.forEach(function(completed){
+        if (completed.completed)
+        it = it+1;
+          if(it == 24){
+            complete = false;
+          }
+      });
+    this.completeMonday = complete;
     if(this.completeMonday) {
       this.tdMassive.forEach(function(completed){
         completed.completed = true;
@@ -329,7 +337,15 @@ export default {
         this.selectMonday = false;
       }
     },
-    changeComplete2(change, it=0) {
+    changeComplete2(change, it=0, complete=true) {
+    this.tdMassive2.forEach(function(completed1){
+        if (completed1.completed1)
+        it = it+1;
+          if(it == 24){
+            complete = false;
+          }
+      });
+    this.completeTuesday = complete;
     if(this.completeTuesday) {
       this.tdMassive2.forEach(function(completed1){
         completed1.completed1 = true;
@@ -351,7 +367,15 @@ export default {
         this.selectTuesday = false;
       }
     },
-    changeComplete3(change, it=0) {
+    changeComplete3(change, it=0, complete=true) {
+    this.tdMassive3.forEach(function(completed2){
+        if (completed2.completed2)
+        it = it+1;
+          if(it == 24){
+            complete = false;
+          }
+      });
+    this.completeWednesday = complete;
     if(this.completeWednesday) {
       this.tdMassive3.forEach(function(completed2){
         completed2.completed2 = true;
@@ -373,7 +397,15 @@ export default {
         this.selectWednesday = false;
       }
     },
-    changeComplete4(change, it=0) {
+    changeComplete4(change, it=0, complete=true) {
+    this.tdMassive4.forEach(function(completed3){
+        if (completed3.completed3)
+        it = it+1;
+          if(it == 24){
+            complete = false;
+          }
+      });
+    this.completeThursday = complete;
     if(this.completeThursday) {
       this.tdMassive4.forEach(function(completed3){
         completed3.completed3 = true;
@@ -395,7 +427,15 @@ export default {
         this.selectThursday = false;
       }
     },
-    changeComplete5(change, it=0) {
+    changeComplete5(change, it=0, complete=true) {
+    this.tdMassive5.forEach(function(completed4){
+        if (completed4.completed4)
+        it = it+1;
+          if(it == 24){
+            complete = false;
+          }
+      });
+    this.completeFriday = complete;
     if(this.completeFriday) {
       this.tdMassive5.forEach(function(completed4){
         completed4.completed4 = true;
@@ -417,7 +457,15 @@ export default {
         this.selectFriday = false;
       }
     },
-    changeComplete6(change, it=0) {
+    changeComplete6(change, it=0, complete=true) {
+    this.tdMassive6.forEach(function(completed5){
+        if (completed5.completed5)
+        it = it+1;
+          if(it == 24){
+            complete = false;
+          }
+      });
+    this.completeSaturday = complete;
     if(this.completeSaturday) {
       this.tdMassive6.forEach(function(completed5){
         completed5.completed5 = true;
@@ -439,7 +487,15 @@ export default {
         this.selectSaturday = false;
       }
     },
-    changeComplete7(change, it=0) {
+    changeComplete7(change, it=0, complete=true) {
+    this.tdMassive7.forEach(function(completed6){
+        if (completed6.completed6)
+        it = it+1;
+          if(it == 24){
+            complete = false;
+          }
+      });
+    this.completeSunday = complete;
     if(this.completeSunday) {
       this.tdMassive7.forEach(function(completed6){
         completed6.completed6 = true;
