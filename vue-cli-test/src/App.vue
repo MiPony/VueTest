@@ -15,7 +15,7 @@
         <li>21:00</li>
       </ul>
     </div>
-    <div class="main">
+    <div class="main"> 
       <div @click="selectMo()">
         <p v-bind:class="{changeColor: selectMonday}">MO</p>
         <span class="firstSpan"><input type="checkbox" id="cb1" @change="changeComplete()"><label for="cb1"></label></span>
