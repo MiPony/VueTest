@@ -80,7 +80,7 @@
         <div class="borderRight"></div>
       </div>
       <input class="clearButton" type="submit" value="Clear" @click="clearAll()">
-      <input class="saveButton" type="submit" value="Save Changes">
+      <input class="saveButton" type="submit" value="Save Changes" @click="intervalDay()">
     </div>
   </div>
 </template>
@@ -728,7 +728,203 @@ export default {
         }
       });
       this.change7 = change;
-    }
+    },
+    intervalDay(countInterval=false, bt=0, et=-1) {
+    var interval = {
+      'mo': [],
+      'tu': [],
+      'we': [],
+      'th': [],
+      'fr': [],
+      'sa': [],
+      'su': [],
+    };
+
+
+      this.tdMassive.forEach(function(completed){
+        if(completed.completed){
+            if(countInterval){
+              et += 60;
+            } else {
+              bt = et+1;
+              et += 60;
+            }
+          countInterval=true;
+        } else {
+          if(countInterval){
+              interval.mo.push({"bt": bt,"et": et});
+          }
+          bt+=60;
+          et+=60;
+          countInterval = false;
+        }
+        if(completed.id == 24){
+        if(completed.completed){
+          interval.mo.push({"bt": bt,"et": et});
+        }
+      }
+      });
+      countInterval=false,
+      bt=0, et=-1,
+
+      this.tdMassive2.forEach(function(completed1){
+        if(completed1.completed1){
+            if(countInterval){
+              et += 60;
+            } else {
+              bt = et+1;
+              et += 60;
+            }
+          countInterval=true;
+        } else {
+          if(countInterval){
+              interval.tu.push({"bt": bt,"et": et});
+          }
+          bt+=60;
+          et+=60;
+          countInterval = false;
+        }
+        if(completed1.id == 24){
+        if(completed1.completed1){
+          interval.tu.push({"bt": bt,"et": et});
+        }
+      }
+      });
+      countInterval=false,
+      bt=0, et=-1,
+
+      this.tdMassive3.forEach(function(completed2){
+        if(completed2.completed2){
+            if(countInterval){
+              et += 60;
+            } else {
+              bt = et+1;
+              et += 60;
+            }
+          countInterval=true;
+        } else {
+          if(countInterval){
+              interval.we.push({"bt": bt,"et": et});
+          }
+          bt+=60;
+          et+=60;
+          countInterval = false;
+        }
+        if(completed2.id == 24){
+        if(completed2.completed2){
+          interval.we.push({"bt": bt,"et": et});
+        }
+      }
+      });
+      countInterval=false,
+      bt=0, et=-1,
+
+      this.tdMassive4.forEach(function(completed3){
+        if(completed3.completed3){
+            if(countInterval){
+              et += 60;
+            } else {
+              bt = et+1;
+              et += 60;
+            }
+          countInterval=true;
+        } else {
+          if(countInterval){
+              interval.th.push({"bt": bt,"et": et});
+          }
+          bt+=60;
+          et+=60;
+          countInterval = false;
+        }
+        if(completed3.id == 24){
+        if(completed3.completed3){
+          interval.th.push({"bt": bt,"et": et});
+        }
+      }
+      });
+      countInterval=false,
+      bt=0, et=-1,
+
+      this.tdMassive5.forEach(function(completed4){
+        if(completed4.completed4){
+            if(countInterval){
+              et += 60;
+            } else {
+              bt = et+1;
+              et += 60;
+            }
+          countInterval=true;
+        } else {
+          if(countInterval){
+              interval.fr.push({"bt": bt,"et": et});
+          }
+          bt+=60;
+          et+=60;
+          countInterval = false;
+        }
+        if(completed4.id == 24){
+        if(completed4.completed4){
+          interval.fr.push({"bt": bt,"et": et});
+        }
+      }
+      });
+      countInterval=false,
+      bt=0, et=-1,
+
+      this.tdMassive6.forEach(function(completed5){
+        if(completed5.completed5){
+            if(countInterval){
+              et += 60;
+            } else {
+              bt = et+1;
+              et += 60;
+            }
+          countInterval=true;
+        } else {
+          if(countInterval){
+              interval.sa.push({"bt": bt,"et": et});
+          }
+          bt+=60;
+          et+=60;
+          countInterval = false;
+        }
+        if(completed5.id == 24){
+        if(completed5.completed5){
+          interval.sa.push({"bt": bt,"et": et});
+        }
+      }
+      });
+      countInterval=false,
+      bt=0, et=-1,
+
+      this.tdMassive7.forEach(function(completed6){
+        if(completed6.completed6){
+            if(countInterval){
+              et += 60;
+            } else {
+              bt = et+1;
+              et += 60;
+            }
+          countInterval=true;
+        } else {
+          if(countInterval){
+              interval.su.push({"bt": bt,"et": et});
+          }
+          bt+=60;
+          et+=60;
+          countInterval = false;
+        }
+        if(completed6.id == 24){
+        if(completed6.completed6){
+          interval.su.push({"bt": bt,"et": et});
+        }
+      }
+      });
+      countInterval=false,
+      bt=0, et=-1,
+
+      console.log( JSON.stringify(interval, "" , " "));
+    }  
   },
   components: {
     Tr,
@@ -781,14 +977,15 @@ ul{
   padding-top: 16px;
 }
 li{
+  padding-left: 3px;
   font-size: 14px;
-  width: 75px;
+  width: 72px;
   font-weight: 600;
   border-left: 3px solid #2c3e50;
   text-align: left;
 }
 li:last-child{
-  width: 78px;
+  width: 75px;
 }
 .main div{
   display: flex;
@@ -899,11 +1096,6 @@ td{
   border-top: 3px solid #bbbbbb;
   width: 23px;
   height: 50px;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 .lastTable td{
   border-bottom: 3px solid #bbbbbb;
