@@ -1,4 +1,7 @@
 <template>
+
+  <!-- Этот компонент связующий между Апом и компонентов, где события мышки, нужен он так как тут тег TABLE, а именно на него нужно было повесить событие mouseleave. -->
+
   <table @mouseleave="startLeave()">
     <Td 
         v-for="massive of tdMassive"

@@ -2,7 +2,7 @@
   <div id="app">
     <h2>SET SHEDULE</h2>
     <div class="header">
-      <i></i>
+      <i></i><!-- Пустой элемент с заданной шириной -->
       <strong>ALL<br>DAY</strong>
       <ul>
         <li>00:00</li>
@@ -16,71 +16,132 @@
       </ul>
     </div>
     <div class="main"> 
-      <div @mousedown="changeChecked(), selectMo()" @mouseup="changeChecked(), selectMo()" @mouseleave="changeChecked(), selectMo()" @mouseenter="changeChecked(), selectMo()">
+
+    <!-- Таблица Понедельника -->
+
+      <div @mousedown="changeChecked(), selectMo()" @mouseup="changeChecked(), selectMo()"
+           @mouseleave="changeChecked(), selectMo()" @mouseenter="changeChecked(), selectMo()">
         <p v-bind:class="{changeColor: selectMonday}">MO</p>
-        <span class="firstSpan"><input type="checkbox" id="cb1" v-model="change" @change="changeComplete()"><label for="cb1"></label></span>
+        <span class="firstSpan">
+        <input type="checkbox" id="cb1" v-model="change" @change="changeComplete()">
+        <label for="cb1"></label>
+        </span>
+        <!-- Компонент для выделения ячеек. Понедельник -->
         <Tr
           v-bind:tdMassive="tdMassive"
           v-bind:class="{selected: tdMassive.completed}" 
         />
         <div class="borderRight"></div>
       </div>
-      <div @mousedown="changeChecked2(), selectTu()" @mouseup="changeChecked2(), selectTu()" @mouseleave="changeChecked2(), selectTu()" @mouseenter="changeChecked2(), selectTu()">
+
+      <!-- Таблица Вторника -->
+
+      <div @mousedown="changeChecked2(), selectTu()" @mouseup="changeChecked2(), selectTu()" 
+           @mouseleave="changeChecked2(), selectTu()" @mouseenter="changeChecked2(), selectTu()">
         <p v-bind:class="{changeColor: selectTuesday}">TU</p>
-        <span><input type="checkbox" id="cb2" v-model="change2" @change="changeComplete2()"> <label for="cb2"></label></span>
+        <span>
+        <input type="checkbox" id="cb2" v-model="change2" @change="changeComplete2()"> 
+        <label for="cb2"></label>
+        </span>
+        <!-- Компонент для выделения ячеек. Вторник -->
           <Tr2
             v-bind:tdMassive2="tdMassive2"
             v-bind:class="{selected: tdMassive2.completed1}"
           />
         <div class="borderRight"></div>
       </div>
-      <div @mousedown="changeChecked3(), selectWe()" @mouseup="changeChecked3(), selectWe()" @mouseleave="changeChecked3(), selectWe()" @mouseenter="changeChecked3(), selectWe()">
+
+      <!-- Таблица Среды -->
+
+      <div @mousedown="changeChecked3(), selectWe()" @mouseup="changeChecked3(), selectWe()"
+           @mouseleave="changeChecked3(), selectWe()" @mouseenter="changeChecked3(), selectWe()">
         <p v-bind:class="{changeColor: selectWednesday}">WE</p>
-        <span><input type="checkbox" id="cb3" v-model="change3" @change="changeComplete3()"> <label for="cb3"></label></span>
+        <span>
+        <input type="checkbox" id="cb3" v-model="change3" @change="changeComplete3()"> 
+        <label for="cb3"></label>
+        </span>
+        <!-- Компонент для выделения ячеек. Среда -->
           <Tr3 
             v-bind:tdMassive3="tdMassive3"
             v-bind:class="{selected: tdMassive3.completed2}"
           />
         <div class="borderRight"></div>
       </div>
-      <div @mousedown="changeChecked4(), selectTh()" @mouseup="changeChecked4(), selectTh()" @mouseleave="changeChecked4(), selectTh()" @mouseenter="changeChecked4(), selectTh()">
+
+      <!-- Таблица Четверга -->
+
+      <div @mousedown="changeChecked4(), selectTh()" @mouseup="changeChecked4(), selectTh()"
+           @mouseleave="changeChecked4(), selectTh()" @mouseenter="changeChecked4(), selectTh()">
         <p v-bind:class="{changeColor: selectThursday}">TH</p>
-        <span><input type="checkbox" id="cb4" v-model="change4" @change="changeComplete4()"> <label for="cb4"></label></span>
+        <span>
+        <input type="checkbox" id="cb4" v-model="change4" @change="changeComplete4()"> 
+        <label for="cb4"></label>
+        </span>
+        <!-- Компонент для выделения ячеек. Четверг -->
           <Tr4 
             v-bind:tdMassive4="tdMassive4"
             v-bind:class="{selected: tdMassive4.completed3}"
           />
         <div class="borderRight"></div>
       </div>
-      <div @mousedown="changeChecked5(), selectFr()" @mouseup="changeChecked5(), selectFr()" @mouseleave="changeChecked5(), selectFr()" @mouseenter="changeChecked5(), selectFr()">
+
+      <!-- Таблица Пятницы -->
+
+      <div @mousedown="changeChecked5(), selectFr()" @mouseup="changeChecked5(), selectFr()" 
+           @mouseleave="changeChecked5(), selectFr()" @mouseenter="changeChecked5(), selectFr()">
         <p v-bind:class="{changeColor: selectFriday}">FR</p>
-        <span><input type="checkbox" id="cb5" v-model="change5" @change="changeComplete5()"> <label for="cb5"></label></span>
+        <span>
+        <input type="checkbox" id="cb5" v-model="change5" @change="changeComplete5()"> 
+        <label for="cb5"></label>
+        </span>
+        <!-- Компонент для выделения ячеек. Пятница -->
           <Tr5 
             v-bind:tdMassive5="tdMassive5"
             v-bind:class="{selected: tdMassive5.completed4}"
           />
         <div class="borderRight"></div>
       </div>
-      <div @mousedown="changeChecked6(), selectSa()" @mouseup="changeChecked6(), selectSa()" @mouseleave="changeChecked6(), selectSa()" @mouseenter="changeChecked6(), selectSa()">
+
+      <!-- Таблица Субботы -->
+
+      <div @mousedown="changeChecked6(), selectSa()" @mouseup="changeChecked6(), selectSa()" 
+           @mouseleave="changeChecked6(), selectSa()" @mouseenter="changeChecked6(), selectSa()">
         <p v-bind:class="{changeColor: selectSaturday}">SA</p>
-        <span><input type="checkbox" id="cb6" v-model="change6" @change="changeComplete6()"> <label for="cb6"></label></span>
+        <span>
+        <input type="checkbox" id="cb6" v-model="change6" @change="changeComplete6()"> 
+        <label for="cb6"></label>
+        </span>
+        <!-- Компонент для выделения ячеек. Суббота -->
           <Tr6 
             v-bind:tdMassive6="tdMassive6"
             v-bind:class="{selected: tdMassive6.completed5}"
           />
         <div class="borderRight"></div>
       </div>
-      <div @mousedown="changeChecked7(), selectSu()" @mouseup="changeChecked7(), selectSu()" @mouseleave="changeChecked7(), selectSu()" @mouseenter="changeChecked7(), selectSu()">
+
+      <!-- Таблица Воскресенья -->
+
+      <div @mousedown="changeChecked7(), selectSu()" @mouseup="changeChecked7(), selectSu()" 
+           @mouseleave="changeChecked7(), selectSu()" @mouseenter="changeChecked7(), selectSu()">
         <p class="lastP" v-bind:class="{changeColor: selectSunday}">SU</p>
-        <span class="lastSpan"><input type="checkbox" id="cb7" v-model="change7" @change="changeComplete7()"> <label for="cb7"></label></span>
+        <span class="lastSpan">
+        <input type="checkbox" id="cb7" v-model="change7" @change="changeComplete7()"> 
+        <label for="cb7"></label>
+        </span>
+        <!-- Компонент для выделения ячеек. Воскресенье -->
           <Tr7 
             v-bind:tdMassive7="tdMassive7"
             v-bind:class="{selected: tdMassive7.completed6}"
           />
         <div class="borderRight"></div>
       </div>
+
+      <!-- Кнопка Clear -->
       <input class="clearButton" type="submit" value="Clear" @click="clearAll()">
+
+      <!-- Кнопка Save Changes. Выводит в консоль выбранные интервалы в JSON-виде -->
       <input class="saveButton" type="submit" value="Save Changes" @click="intervalDay()">
+
     </div>
   </div>
 </template>
@@ -98,6 +159,7 @@ export default {
   name: 'app',
   data() { 
     return {
+      //Отслеживание состояния галочки у чекбоксов
       change: false,
       change2: false,
       change3: false,
@@ -106,6 +168,7 @@ export default {
       change6: false,
       change7: false,
 
+      //Подкрашивает аббревиатуру дня, у которого есть хотя бы один выбранный интервал 
       selectMonday: false,
       selectTuesday: false,
       selectWednesday: false,
@@ -114,6 +177,7 @@ export default {
       selectSaturday: false,
       selectSunday: false,
 
+      //Исходя из состояния чекбокса, выбирает весь день или сбрасывает все интервалы
       completeMonday: true,
       completeTuesday: true,
       completeWednesday: true,
@@ -122,6 +186,7 @@ export default {
       completeSaturday: true,
       completeSunday: true,
 
+      //Массив для таблицы. Понедельник
       tdMassive: [
         {id: 1, completed: false},
         {id: 2, completed: false},
@@ -148,6 +213,8 @@ export default {
         {id: 23, completed: false},
         {id: 24, completed: false}
       ],
+
+      //Массив для таблицы. Вторник
       tdMassive2: [
         {id: 1, completed1: false},
         {id: 2, completed1: false},
@@ -174,6 +241,8 @@ export default {
         {id: 23, completed1: false},
         {id: 24, completed1: false}
       ],
+
+      //Массив для таблицы. Среда
       tdMassive3: [
         {id: 1, completed2: false},
         {id: 2, completed2: false},
@@ -200,6 +269,8 @@ export default {
         {id: 23, completed2: false},
         {id: 24, completed2: false}
       ],
+
+      //Массив для таблицы. Четверг
       tdMassive4: [
         {id: 1, completed3: false},
         {id: 2, completed3: false},
@@ -226,6 +297,8 @@ export default {
         {id: 23, completed3: false},
         {id: 24, completed3: false}
       ],
+
+      //Массив для таблицы. Пятница
       tdMassive5: [
         {id: 1, completed4: false},
         {id: 2, completed4: false},
@@ -252,6 +325,8 @@ export default {
         {id: 23, completed4: false},
         {id: 24, completed4: false}
       ],
+
+      //Массив для таблицы. Суббота
       tdMassive6: [
         {id: 1, completed5: false},
         {id: 2, completed5: false},
@@ -278,6 +353,8 @@ export default {
         {id: 23, completed5: false},
         {id: 24, completed5: false}
       ],
+
+      //Массив для таблицы. Воскресенье
       tdMassive7: [
         {id: 1, completed6: false},
         {id: 2, completed6: false},
@@ -307,8 +384,14 @@ export default {
     }
   },
   methods: {
+
+    //Изменения цвета интервалов при нажатии чекбокса. Понедельник
+
     changeComplete(change, it=0, complete=true) {
     this.tdMassive.forEach(function(completed){
+
+        //Условие, которое проверяет выделение всех ячеек вручную, в таком случае чекбокс удалит их
+
         if (completed.completed)
         it = it+1;
           if(it == 24){
@@ -316,6 +399,9 @@ export default {
           }
       });
     this.completeMonday = complete;
+
+    //Если условие истинно, тогда можно выбрать весь день и поставить галочку на чекбоксе
+
     if(this.completeMonday) {
       this.tdMassive.forEach(function(completed){
         completed.completed = true;
@@ -324,19 +410,34 @@ export default {
             change = true;
           }
       });
+
+      //Иначе чистит всю таблицу понедельника
+
       } else {
       this.tdMassive.forEach(function(completed){
         completed.completed = false;
       });
       }
+
+      //Смена чекбокса для будущего вызова чекбокса
+
       this.completeMonday = !this.completeMonday;
+
+      //Выбор галочки для инпута
+
       this.change = change;
+
+      //Закрашивание аббревиатуры, когда чекбокс полностью выбран и наоборот
+
       if (!this.completeMonday){
         this.selectMonday = true;
       } else {
         this.selectMonday = false;
       }
     },
+
+    //Изменения цвета интервалов при нажатии чекбокса. Вторник
+
     changeComplete2(change, it=0, complete=true) {
     this.tdMassive2.forEach(function(completed1){
         if (completed1.completed1)
@@ -367,6 +468,9 @@ export default {
         this.selectTuesday = false;
       }
     },
+
+    //Изменения цвета интервалов при нажатии чекбокса. Среда
+
     changeComplete3(change, it=0, complete=true) {
     this.tdMassive3.forEach(function(completed2){
         if (completed2.completed2)
@@ -397,6 +501,9 @@ export default {
         this.selectWednesday = false;
       }
     },
+
+    //Изменения цвета интервалов при нажатии чекбокса. Четверг
+
     changeComplete4(change, it=0, complete=true) {
     this.tdMassive4.forEach(function(completed3){
         if (completed3.completed3)
@@ -427,6 +534,9 @@ export default {
         this.selectThursday = false;
       }
     },
+
+    //Изменения цвета интервалов при нажатии чекбокса. Пятница
+
     changeComplete5(change, it=0, complete=true) {
     this.tdMassive5.forEach(function(completed4){
         if (completed4.completed4)
@@ -457,6 +567,9 @@ export default {
         this.selectFriday = false;
       }
     },
+
+    //Изменения цвета интервалов при нажатии чекбокса. Суббота
+
     changeComplete6(change, it=0, complete=true) {
     this.tdMassive6.forEach(function(completed5){
         if (completed5.completed5)
@@ -487,6 +600,9 @@ export default {
         this.selectSaturday = false;
       }
     },
+
+    //Изменения цвета интервалов при нажатии чекбокса. Воскресенье
+
     changeComplete7(change, it=0, complete=true) {
     this.tdMassive7.forEach(function(completed6){
         if (completed6.completed6)
@@ -517,7 +633,13 @@ export default {
         this.selectSunday = false;
       }
     },
+
+    //Подкрашивает аббревиатуру дня. Понедельник
+
     selectMo (selectMonday){
+
+    //Если хоть один completed -> true, то аббревиатура закрашивается
+
       this.tdMassive.forEach(function(completed){
         if (completed.completed) {
           selectMonday = true;
@@ -525,6 +647,9 @@ export default {
       });
       this.selectMonday = selectMonday;
     },
+
+    //Подкрашивает аббревиатуру дня. Вторник
+
     selectTu (selectTuesday){
       this.tdMassive2.forEach(function(completed1){
         if (completed1.completed1) {
@@ -533,6 +658,9 @@ export default {
       });
       this.selectTuesday = selectTuesday;
     },
+
+    //Подкрашивает аббревиатуру дня. Среда
+
     selectWe (selectWednesday){
       this.tdMassive3.forEach(function(completed2){
         if (completed2.completed2) {
@@ -541,6 +669,9 @@ export default {
       });
       this.selectWednesday = selectWednesday;
     },
+
+    //Подкрашивает аббревиатуру дня. Четверг
+
     selectTh (selectThursday){
       this.tdMassive4.forEach(function(completed3){
         if (completed3.completed3) {
@@ -549,6 +680,9 @@ export default {
       });
       this.selectThursday = selectThursday;
     },
+
+    //Подкрашивает аббревиатуру дня. Пятница
+
     selectFr (selectFriday){
       this.tdMassive5.forEach(function(completed4){
         if (completed4.completed4) {
@@ -557,6 +691,9 @@ export default {
       });
       this.selectFriday = selectFriday;
     },
+
+    //Подкрашивает аббревиатуру дня. Суббота
+
     selectSa (selectSaturday){
       this.tdMassive6.forEach(function(completed5){
         if (completed5.completed5) {
@@ -565,6 +702,9 @@ export default {
       });
       this.selectSaturday = selectSaturday;
     },
+
+    //Подкрашивает аббревиатуру дня. Воскресенье
+
     selectSu (selectSunday){
       this.tdMassive7.forEach(function(completed6){
         if (completed6.completed6) {
@@ -573,6 +713,9 @@ export default {
       });
       this.selectSunday = selectSunday;
     },
+
+    //Кнопка Clear
+
     clearAll (){
       this.tdMassive.forEach(function(completed){
         completed.completed = false;
@@ -595,6 +738,7 @@ export default {
       this.tdMassive7.forEach(function(completed6){
         completed6.completed6 = false;
       });
+
       this.selectMonday = false;
       this.selectTuesday = false;
       this.selectWednesday = false;
@@ -602,6 +746,7 @@ export default {
       this.selectFriday = false;
       this.selectSaturday = false;
       this.selectSunday = false;
+
       this.completeMonday = true;
       this.completeTuesday = true;
       this.completeWednesday = true;
@@ -609,6 +754,7 @@ export default {
       this.completeFriday = true;
       this.completeSaturday = true;
       this.completeSunday = true;
+
       this.change = false;
       this.change2 = false;
       this.change3 = false;
@@ -617,12 +763,21 @@ export default {
       this.change6 = false;
       this.change7 = false;
     },
+
+    //Отслеживает состояние галочки чекбокса. Понедельник 
+
     changeChecked(change, it=0) {
+
+    //Если хотя бы один completed -> false, галочка убирается
+
     this.tdMassive.forEach(function(completed){
         if (!completed.completed) {
           change = false;
         }
       });
+
+    //Если все 24 элемента истинны, то появится галочка у чекбокса
+
       this.tdMassive.forEach(function(completed){
         if (completed.completed) {
           it = it+1;
@@ -633,6 +788,9 @@ export default {
       });
       this.change = change;
     },
+
+    //Отслеживает состояние галочки чекбокса. Вторник
+
     changeChecked2(change, it=0) {
     this.tdMassive2.forEach(function(completed1){
         if (!completed1.completed1) {
@@ -649,6 +807,9 @@ export default {
       });
       this.change2 = change;
     },
+
+    //Отслеживает состояние галочки чекбокса. Среда
+
     changeChecked3(change, it=0) {
     this.tdMassive3.forEach(function(completed2){
         if (!completed2.completed2) {
@@ -665,6 +826,9 @@ export default {
       });
       this.change3 = change;
     },
+
+    //Отслеживает состояние галочки чекбокса. Четверг
+
     changeChecked4(change, it=0) {
     this.tdMassive4.forEach(function(completed3){
         if (!completed3.completed3) {
@@ -681,6 +845,9 @@ export default {
       });
       this.change4 = change;
     },
+
+    //Отслеживает состояние галочки чекбокса. Пятница
+
     changeChecked5(change, it=0) {
     this.tdMassive5.forEach(function(completed4){
         if (!completed4.completed4) {
@@ -697,6 +864,9 @@ export default {
       });
       this.change5 = change;
     },
+
+    //Отслеживает состояние галочки чекбокса. Суббота
+
     changeChecked6(change, it=0) {
     this.tdMassive6.forEach(function(completed5){
         if (!completed5.completed5) {
@@ -713,6 +883,9 @@ export default {
       });
       this.change6 = change;
     },
+
+    //Отслеживает состояние галочки чекбокса. Воскресенье
+
     changeChecked7(change, it=0) {
     this.tdMassive7.forEach(function(completed6){
         if (!completed6.completed6) {
@@ -729,7 +902,13 @@ export default {
       });
       this.change7 = change;
     },
-    intervalDay(countInterval=false, bt=0, et=-1) {
+
+    //Вывод выбранных интервалов после нажатия на кнопку Save Changes
+
+    intervalDay(countInterval=false, bt=0, et=-1) { 
+    //Был выбран et=-1,чтобы не делать отдельное условие для первого элемента массива
+    //countInterval - переменная, которая запоминает серию интервалов, которые идут подряд
+
     var interval = {
       'mo': [],
       'tu': [],
@@ -740,24 +919,35 @@ export default {
       'su': [],
     };
 
+      //Расчет интервалов. Понедельник
 
       this.tdMassive.forEach(function(completed){
         if(completed.completed){
             if(countInterval){
+
+            //Если идет серия подряд выбранных интервалов увеливается только второй элемент "ДО"
               et += 60;
             } else {
+
+            //Если серии нет, то элемент "ОТ" запоминает последнее значение элемента "ДО" и добавляет 1
               bt = et+1;
               et += 60;
             }
           countInterval=true;
         } else {
+
+          //Условие, которое проверяет окончание интервала или серии интервалов
           if(countInterval){
               interval.mo.push({"bt": bt,"et": et});
           }
+
+          //Если не выбран интервал, то элементы передвигаются дальше по таблице
           bt+=60;
           et+=60;
           countInterval = false;
         }
+
+        //Почему-то последний элемент в массиве требовал отдельной проверки
         if(completed.id == 24){
         if(completed.completed){
           interval.mo.push({"bt": bt,"et": et});
@@ -766,6 +956,8 @@ export default {
       });
       countInterval=false,
       bt=0, et=-1,
+
+      //Расчет интервалов. Вторник
 
       this.tdMassive2.forEach(function(completed1){
         if(completed1.completed1){
@@ -793,6 +985,8 @@ export default {
       countInterval=false,
       bt=0, et=-1,
 
+      //Расчет интервалов. Среда
+
       this.tdMassive3.forEach(function(completed2){
         if(completed2.completed2){
             if(countInterval){
@@ -818,6 +1012,8 @@ export default {
       });
       countInterval=false,
       bt=0, et=-1,
+
+      //Расчет интервалов. Четверг
 
       this.tdMassive4.forEach(function(completed3){
         if(completed3.completed3){
@@ -845,6 +1041,8 @@ export default {
       countInterval=false,
       bt=0, et=-1,
 
+      //Расчет интервалов. Пятница
+
       this.tdMassive5.forEach(function(completed4){
         if(completed4.completed4){
             if(countInterval){
@@ -870,6 +1068,8 @@ export default {
       });
       countInterval=false,
       bt=0, et=-1,
+
+      //Расчет интервалов. Суббота
 
       this.tdMassive6.forEach(function(completed5){
         if(completed5.completed5){
@@ -897,6 +1097,8 @@ export default {
       countInterval=false,
       bt=0, et=-1,
 
+      //Расчет интервалов. Воскресенье
+
       this.tdMassive7.forEach(function(completed6){
         if(completed6.completed6){
             if(countInterval){
@@ -922,6 +1124,8 @@ export default {
       });
       countInterval=false,
       bt=0, et=-1,
+
+      //Вывод интервалов всех дней в консоль в JSON-виде
 
       console.log( JSON.stringify(interval, "" , " "));
     }  
